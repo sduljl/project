@@ -7,4 +7,4 @@
 ## 代码运行：    
        具体的代码在源文件里面，本实验执行的环境是 vs2022。   
        运行结果如图所示：   
-       ![](/ASUS/Desktop/birthday-attack-operation-results.png)
+       ![](https://github.com/sduljl/project/blob/main/SM3-生日攻击/birthday-attack-operation-results.png)
