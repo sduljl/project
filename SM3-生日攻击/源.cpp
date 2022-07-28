@@ -3,26 +3,26 @@
 #include <cmath>
 using namespace std;
 
-//¶þ½øÖÆ×ª»»ÎªÊ®Áù½øÖÆº¯ÊýÊµÏÖ
+//äºŒè¿›åˆ¶è½¬æ¢ä¸ºåå…­è¿›åˆ¶å‡½æ•°å®žçŽ°
 string BinToHex(string str) {
-	string hex = "";//ÓÃÀ´´æ´¢×îºóÉú³ÉµÄÊ®Áù½øÖÆÊý
-	int temp = 0;//ÓÃÀ´´æ´¢Ã¿´ÎËÄÎ»¶þ½øÖÆÊýµÄÊ®½øÖÆÖµ
-	while (str.size() % 4 != 0) {//ÒòÎªÃ¿ËÄÎ»¶þ½øÖÆÊý¾ÍÄÜ¹»³ÉÎªÒ»¸öÊ®Áù½øÖÆÊý£¬ËùÒÔ½«¶þ½øÖÆÊý³¤¶È×ª»»Îª4µÄ±¶Êý
-		str = "0" + str;//×î¸ßÎ»Ìí0Ö±µ½³¤¶ÈÎª4µÄ±¶Êý¼´¿É
+	string hex = "";//ç”¨æ¥å­˜å‚¨æœ€åŽç”Ÿæˆçš„åå…­è¿›åˆ¶æ•°
+	int temp = 0;//ç”¨æ¥å­˜å‚¨æ¯æ¬¡å››ä½äºŒè¿›åˆ¶æ•°çš„åè¿›åˆ¶å€¼
+	while (str.size() % 4 != 0) {//å› ä¸ºæ¯å››ä½äºŒè¿›åˆ¶æ•°å°±èƒ½å¤Ÿæˆä¸ºä¸€ä¸ªåå…­è¿›åˆ¶æ•°ï¼Œæ‰€ä»¥å°†äºŒè¿›åˆ¶æ•°é•¿åº¦è½¬æ¢ä¸º4çš„å€æ•°
+		str = "0" + str;//æœ€é«˜ä½æ·»0ç›´åˆ°é•¿åº¦ä¸º4çš„å€æ•°å³å¯
 	}
 	for (int i = 0; i < str.size(); i += 4) {
-		temp = (str[i] - '0') * 8 + (str[i + 1] - '0') * 4 + (str[i + 2] - '0') * 2 + (str[i + 3] - '0') * 1;//ÅÐ¶Ï³ö4Î»¶þ½øÖÆÊýµÄÊ®½øÖÆ´óÐ¡Îª¶àÉÙ
-		if (temp < 10) {//µ±µÃµ½µÄÖµÐ¡ÓÚ10Ê±£¬¿ÉÒÔÖ±½ÓÓÃ0-9À´´úÌæ
+		temp = (str[i] - '0') * 8 + (str[i + 1] - '0') * 4 + (str[i + 2] - '0') * 2 + (str[i + 3] - '0') * 1;//åˆ¤æ–­å‡º4ä½äºŒè¿›åˆ¶æ•°çš„åè¿›åˆ¶å¤§å°ä¸ºå¤šå°‘
+		if (temp < 10) {//å½“å¾—åˆ°çš„å€¼å°äºŽ10æ—¶ï¼Œå¯ä»¥ç›´æŽ¥ç”¨0-9æ¥ä»£æ›¿
 			hex += to_string(temp);
 		}
-		else {//µ±µÃµ½µÄÖµ´óÓÚ10Ê±£¬ÐèÒª½øÐÐA-FµÄ×ª»»
+		else {//å½“å¾—åˆ°çš„å€¼å¤§äºŽ10æ—¶ï¼Œéœ€è¦è¿›è¡ŒA-Fçš„è½¬æ¢
 			hex += 'A' + (temp - 10);
 		}
 	}
 	return hex;
 }
 
-//Ê®Áù½øÖÆ×ª»»Îª¶þ½øÖÆº¯ÊýÊµÏÖ
+//åå…­è¿›åˆ¶è½¬æ¢ä¸ºäºŒè¿›åˆ¶å‡½æ•°å®žçŽ°
 string HexToBin(string str) {
 	string bin = "";
 	string table[16] = { "0000","0001","0010","0011","0100","0101","0110","0111","1000","1001","1010","1011","1100","1101","1110","1111" };
@@ -37,7 +37,7 @@ string HexToBin(string str) {
 	return bin;
 }
 
-//¶þ½øÖÆ×ª»»ÎªÊ®½øÖÆµÄº¯ÊýÊµÏÖ
+//äºŒè¿›åˆ¶è½¬æ¢ä¸ºåè¿›åˆ¶çš„å‡½æ•°å®žçŽ°
 int BinToDec(string str) {
 	int dec = 0;
 	for (int i = 0; i < str.size(); i++) {
@@ -46,7 +46,7 @@ int BinToDec(string str) {
 	return dec;
 }
 
-//Ê®½øÖÆ×ª»»Îª¶þ½øÖÆµÄº¯ÊýÊµÏÖ
+//åè¿›åˆ¶è½¬æ¢ä¸ºäºŒè¿›åˆ¶çš„å‡½æ•°å®žçŽ°
 string DecToBin(int str) {
 	string bin = "";
 	while (str >= 1) {
@@ -56,7 +56,7 @@ string DecToBin(int str) {
 	return bin;
 }
 
-//Ê®Áù½øÖÆ×ª»»ÎªÊ®½øÖÆµÄº¯ÊýÊµÏÖ
+//åå…­è¿›åˆ¶è½¬æ¢ä¸ºåè¿›åˆ¶çš„å‡½æ•°å®žçŽ°
 int HexToDec(string str) {
 	int dec = 0;
 	for (int i = 0; i < str.size(); i++) {
@@ -70,7 +70,7 @@ int HexToDec(string str) {
 	return dec;
 }
 
-//Ê®½øÖÆ×ª»»ÎªÊ®Áù½øÖÆµÄº¯ÊýÊµÏÖ
+//åè¿›åˆ¶è½¬æ¢ä¸ºåå…­è¿›åˆ¶çš„å‡½æ•°å®žçŽ°
 string DecToHex(int str) {
 	string hex = "";
 	int temp = 0;
@@ -87,12 +87,12 @@ string DecToHex(int str) {
 	return hex;
 }
 
-string padding(string str) {//¶ÔÊý¾Ý½øÐÐÌî³ä 
+string padding(string str) {//å¯¹æ•°æ®è¿›è¡Œå¡«å…… 
 	string res = "";
-	for (int i = 0; i < str.size(); i++) {//Ê×ÏÈ½«ÊäÈëÖµ×ª»»Îª16½øÖÆ×Ö·û´®
+	for (int i = 0; i < str.size(); i++) {//é¦–å…ˆå°†è¾“å…¥å€¼è½¬æ¢ä¸º16è¿›åˆ¶å­—ç¬¦ä¸²
 		res += DecToHex((int)str[i]);
 	}
-	/*cout << "ÊäÈë×Ö·û´®µÄASCIIÂë±íÊ¾Îª£º" << endl;
+	/*cout << "è¾“å…¥å­—ç¬¦ä¸²çš„ASCIIç è¡¨ç¤ºä¸ºï¼š" << endl;
 	for (int i = 0; i < res.size(); i++) {
 		cout << res[i];
 		if ((i + 1) % 8 == 0) {
@@ -103,12 +103,12 @@ string padding(string str) {//¶ÔÊý¾Ý½øÐÐÌî³ä
 		}
 	}
 	cout << endl;*/
-	int res_length = res.size() * 4;//¼ÇÂ¼µÄ³¤¶ÈÎª2½øÖÆÏÂµÄ³¤¶È
-	res += "8";//ÔÚ»ñµÃµÄÊý¾ÝºóÃæÌí1£¬ÔÚ16½øÖÆÏÂÏàµ±ÓÚÊÇÌí¼Ó8
+	int res_length = res.size() * 4;//è®°å½•çš„é•¿åº¦ä¸º2è¿›åˆ¶ä¸‹çš„é•¿åº¦
+	res += "8";//åœ¨èŽ·å¾—çš„æ•°æ®åŽé¢æ·»1ï¼Œåœ¨16è¿›åˆ¶ä¸‹ç›¸å½“äºŽæ˜¯æ·»åŠ 8
 	while (res.size() % 128 != 112) {
-		res += "0";//¡°0¡±Êý¾ÝÌî³ä
+		res += "0";//â€œ0â€æ•°æ®å¡«å……
 	}
-	string res_len = DecToHex(res_length);//ÓÃÓÚ¼ÇÂ¼Êý¾Ý³¤¶ÈµÄ×Ö·û´®
+	string res_len = DecToHex(res_length);//ç”¨äºŽè®°å½•æ•°æ®é•¿åº¦çš„å­—ç¬¦ä¸²
 	while (res_len.size() != 16) {
 		res_len = "0" + res_len;
 	}
@@ -116,13 +116,13 @@ string padding(string str) {//¶ÔÊý¾Ý½øÐÐÌî³ä
 	return res;
 }
 
-string LeftShift(string str, int len) {//ÊµÏÖÑ­»·×óÒÆlenÎ»¹¦ÄÜ
+string LeftShift(string str, int len) {//å®žçŽ°å¾ªçŽ¯å·¦ç§»lenä½åŠŸèƒ½
 	string res = HexToBin(str);
 	res = res.substr(len) + res.substr(0, len);
 	return BinToHex(res);
 }
 
-string XOR(string str1, string str2) {//ÊµÏÖÒì»ò²Ù×÷
+string XOR(string str1, string str2) {//å®žçŽ°å¼‚æˆ–æ“ä½œ
 	string res1 = HexToBin(str1);
 	string res2 = HexToBin(str2);
 	string res = "";
@@ -137,7 +137,7 @@ string XOR(string str1, string str2) {//ÊµÏÖÒì»ò²Ù×÷
 	return BinToHex(res);
 }
 
-string AND(string str1, string str2) {//ÊµÏÖÓë²Ù×÷
+string AND(string str1, string str2) {//å®žçŽ°ä¸Žæ“ä½œ
 	string res1 = HexToBin(str1);
 	string res2 = HexToBin(str2);
 	string res = "";
@@ -152,7 +152,7 @@ string AND(string str1, string str2) {//ÊµÏÖÓë²Ù×÷
 	return BinToHex(res);
 }
 
-string OR(string str1, string str2) {//ÊµÏÖ»ò²Ù×÷
+string OR(string str1, string str2) {//å®žçŽ°æˆ–æ“ä½œ
 	string res1 = HexToBin(str1);
 	string res2 = HexToBin(str2);
 	string res = "";
@@ -167,7 +167,7 @@ string OR(string str1, string str2) {//ÊµÏÖ»ò²Ù×÷
 	return BinToHex(res);
 }
 
-string NOT(string str) {//ÊµÏÖ·Ç²Ù×÷
+string NOT(string str) {//å®žçŽ°éžæ“ä½œ
 	string res1 = HexToBin(str);
 	string res = "";
 	for (int i = 0; i < res1.size(); i++) {
@@ -181,15 +181,15 @@ string NOT(string str) {//ÊµÏÖ·Ç²Ù×÷
 	return BinToHex(res);
 }
 
-char binXor(char str1, char str2) {//ÊµÏÖµ¥±ÈÌØµÄÒì»ò²Ù×÷
+char binXor(char str1, char str2) {//å®žçŽ°å•æ¯”ç‰¹çš„å¼‚æˆ–æ“ä½œ
 	return str1 == str2 ? '0' : '1';
 }
 
-char binAnd(char str1, char str2) {//ÊµÏÖµ¥±ÈÌØµÄÓë²Ù×÷
+char binAnd(char str1, char str2) {//å®žçŽ°å•æ¯”ç‰¹çš„ä¸Žæ“ä½œ
 	return (str1 == '1' && str2 == '1') ? '1' : '0';
 }
 
-string ModAdd(string str1, string str2) {//mod 2^32ÔËËãµÄº¯ÊýÊµÏÖ
+string ModAdd(string str1, string str2) {//mod 2^32è¿ç®—çš„å‡½æ•°å®žçŽ°
 	string res1 = HexToBin(str1);
 	string res2 = HexToBin(str2);
 	char temp = '0';
@@ -211,15 +211,15 @@ string ModAdd(string str1, string str2) {//mod 2^32ÔËËãµÄº¯ÊýÊµÏÖ
 	return BinToHex(res);
 }
 
-string P1(string str) {//ÊµÏÖÖÃ»»¹¦ÄÜP1£¨X£©
+string P1(string str) {//å®žçŽ°ç½®æ¢åŠŸèƒ½P1ï¼ˆXï¼‰
 	return XOR(XOR(str, LeftShift(str, 15)), LeftShift(str, 23));
 }
 
-string P0(string str) {//ÊµÏÖÖÃ»»¹¦ÄÜP0£¨X£©
+string P0(string str) {//å®žçŽ°ç½®æ¢åŠŸèƒ½P0ï¼ˆXï¼‰
 	return XOR(XOR(str, LeftShift(str, 9)), LeftShift(str, 17));
 }
 
-string T(int j) {//·µ»ØTj³£Á¿ÖµµÄº¯ÊýÊµÏÖ
+string T(int j) {//è¿”å›žTjå¸¸é‡å€¼çš„å‡½æ•°å®žçŽ°
 	if (0 <= j && j <= 15) {
 		return "79CC4519";
 	}
@@ -228,7 +228,7 @@ string T(int j) {//·µ»ØTj³£Á¿ÖµµÄº¯ÊýÊµÏÖ
 	}
 }
 
-string FF(string str1, string str2, string str3, int j) {//ÊµÏÖ²¼¶ûº¯ÊýFF¹¦ÄÜ
+string FF(string str1, string str2, string str3, int j) {//å®žçŽ°å¸ƒå°”å‡½æ•°FFåŠŸèƒ½
 	if (0 <= j && j <= 15) {
 		return XOR(XOR(str1, str2), str3);
 	}
@@ -237,7 +237,7 @@ string FF(string str1, string str2, string str3, int j) {//ÊµÏÖ²¼¶ûº¯ÊýFF¹¦ÄÜ
 	}
 }
 
-string GG(string str1, string str2, string str3, int j) {//ÊµÏÖ²¼¶ûº¯ÊýGG¹¦ÄÜ
+string GG(string str1, string str2, string str3, int j) {//å®žçŽ°å¸ƒå°”å‡½æ•°GGåŠŸèƒ½
 	if (0 <= j && j <= 15) {
 		return XOR(XOR(str1, str2), str3);
 	}
@@ -245,13 +245,13 @@ string GG(string str1, string str2, string str3, int j) {//ÊµÏÖ²¼¶ûº¯ÊýGG¹¦ÄÜ
 		return OR(AND(str1, str2), AND(NOT(str1), str3));
 	}
 }
-string extension(string str) {//ÏûÏ¢À©Õ¹º¯Êý
-	string res = str;//×Ö·û´®ÀàÐÍ´æ´¢Ç°68Î»´æ´¢À©Õ¹×ÖWÖµ
-	for (int i = 16; i < 68; i++) {//¸ù¾Ý¹«Ê½Éú³ÉµÚ17Î»µ½µÚ68Î»µÄWÖµ
+string extension(string str) {//æ¶ˆæ¯æ‰©å±•å‡½æ•°
+	string res = str;//å­—ç¬¦ä¸²ç±»åž‹å­˜å‚¨å‰68ä½å­˜å‚¨æ‰©å±•å­—Wå€¼
+	for (int i = 16; i < 68; i++) {//æ ¹æ®å…¬å¼ç”Ÿæˆç¬¬17ä½åˆ°ç¬¬68ä½çš„Wå€¼
 		res += XOR(XOR(P1(XOR(XOR(res.substr((i - 16) * 8, 8), res.substr((i - 9) * 8, 8)), LeftShift(res.substr((i - 3) * 8, 8), 15))), LeftShift(res.substr((i - 13) * 8, 8), 7)), res.substr((i - 6) * 8, 8));
 	}
-	//cout << "À©Õ¹ºóµÄÏûÏ¢£º" << endl;
-	//cout << "W0,W1,¡­¡­,W67µÄÏûÏ¢£º" << endl;
+	//cout << "æ‰©å±•åŽçš„æ¶ˆæ¯ï¼š" << endl;
+	//cout << "W0,W1,â€¦â€¦,W67çš„æ¶ˆæ¯ï¼š" << endl;
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
 			//cout << res.substr(i * 64 + j * 8, 8) << "  ";
@@ -265,10 +265,10 @@ string extension(string str) {//ÏûÏ¢À©Õ¹º¯Êý
 	res.substr(528, 8);
 	res.substr(536, 8);*/
 	//cout << endl;
-	for (int i = 0; i < 64; i++) {//¸ù¾Ý¹«Ê½Éú³É64Î»W'Öµ
+	for (int i = 0; i < 64; i++) {//æ ¹æ®å…¬å¼ç”Ÿæˆ64ä½W'å€¼
 		res += XOR(res.substr(i * 8, 8), res.substr((i + 4) * 8, 8));
 	}
-	/*cout << "W0',W1',¡­¡­,W63'µÄÏûÏ¢£º" << endl;
+	/*cout << "W0',W1',â€¦â€¦,W63'çš„æ¶ˆæ¯ï¼š" << endl;
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
 			cout << res.substr(544 + i * 64 + j * 8, 8) << "  ";
@@ -279,11 +279,11 @@ string extension(string str) {//ÏûÏ¢À©Õ¹º¯Êý
 	return res;
 }
 
-string compress(string str1, string str2) {//ÏûÏ¢Ñ¹Ëõº¯Êý
+string compress(string str1, string str2) {//æ¶ˆæ¯åŽ‹ç¼©å‡½æ•°
 	string IV = str2;
 	string A = IV.substr(0, 8), B = IV.substr(8, 8), C = IV.substr(16, 8), D = IV.substr(24, 8), E = IV.substr(32, 8), F = IV.substr(40, 8), G = IV.substr(48, 8), H = IV.substr(56, 8);
 	string SS1 = "", SS2 = "", TT1 = "", TT2 = "";
-	/*cout << "µü´úÑ¹ËõÖÐ¼äÖµ: " << endl;
+	/*cout << "è¿­ä»£åŽ‹ç¼©ä¸­é—´å€¼: " << endl;
 	cout << "    A         B         C         D         E         F        G         H " << endl;
 	cout << A << "  " << B << "  " << C << "  " << D << "  " << E << "  " << F << "  " << G << "  " << H << endl;*/
 	for (int j = 0; j < 64; j++) {
@@ -306,14 +306,14 @@ string compress(string str1, string str2) {//ÏûÏ¢Ñ¹Ëõº¯Êý
 	return res;
 }
 
-string iteration(string str) {//µü´úÑ¹Ëõº¯ÊýÊµÏÖ
+string iteration(string str) {//è¿­ä»£åŽ‹ç¼©å‡½æ•°å®žçŽ°
 	int num = str.size() / 128;
-	/*cout << "ÏûÏ¢¾­¹ýÌî³äÖ®ºó¹²ÓÐ " + to_string(num) + " ¸öÏûÏ¢·Ö×é¡£" << endl;*/
+	/*cout << "æ¶ˆæ¯ç»è¿‡å¡«å……ä¹‹åŽå…±æœ‰ " + to_string(num) + " ä¸ªæ¶ˆæ¯åˆ†ç»„ã€‚" << endl;*/
 	//cout << endl;
 	string V = "7380166F4914B2B9172442D7DA8A0600A96F30BC163138AAE38DEE4DB0FB0E4E";
 	string B = "", extensionB = "", compressB = "";
 	for (int i = 0; i < num; i++) {
-		/*cout << "µÚ " << to_string(i + 1) << " ¸öÏûÏ¢·Ö×é£º" << endl;*/
+		/*cout << "ç¬¬ " << to_string(i + 1) << " ä¸ªæ¶ˆæ¯åˆ†ç»„ï¼š" << endl;*/
 		//cout << endl;
 		B = str.substr(i * 128, 128);
 		extensionB = extension(B);
@@ -333,20 +333,20 @@ int comstring(string a, string b, int n)
 	}
 	return 1;
 }
-int main() {//Ö÷º¯Êý
+int main() {//ä¸»å‡½æ•°
 
-	//ÊµÏÖÉúÈÕ¹¥»÷
+	//å®žçŽ°ç”Ÿæ—¥æ”»å‡»
 	string str2[2];
-	//³õÊ¼»¯
+	//åˆå§‹åŒ–
 	str2[0] = "aaaaaaaaaaa";
 	str2[1] = "fffffffffff";
-	//ÕâÀïÃæhashÖµÊÇ64Î»,Ã¿Ò»Î»¿ÉÒÔÈ¡A-Z,0-9 hashÖµÈ¡Öµ¿Õ¼äÎª64µÄ36´Î·½
-	for (int j = 0; j < 100000; j++)//ÕâÀïµÄjÈ¡ÖµÓ¦¸ÃÔ¼µÈÓÚ¸ùºÅÏÂn(nÎªÔÓ´ÕÖµÈ¡Öµ¿Õ¼ä´óÐ¡£©
+	//è¿™é‡Œé¢hashå€¼æ˜¯64ä½,æ¯ä¸€ä½å¯ä»¥å–A-F,0-9 hashå€¼å–å€¼ç©ºé—´ä¸º64çš„16æ¬¡æ–¹
+	for (int j = 0; j < 100000; j++)//è¿™é‡Œçš„jå–å€¼åº”è¯¥çº¦ç­‰äºŽæ ¹å·ä¸‹n(nä¸ºæ‚å‡‘å€¼å–å€¼ç©ºé—´å¤§å°ï¼‰
 	{
-		for (int i = 0; i <12; i++)      //¼ÙÉèÏûÏ¢µÄ³¤¶ÈÊÇ12
+		for (int i = 0; i <12; i++)      //å‡è®¾æ¶ˆæ¯çš„é•¿åº¦æ˜¯12
 		{
 			str2[0][i] = 'a'+rand()%26;
-			str2[1][i] = 'a'+rand()%26;     //Ëæ»ú¸øÏûÏ¢½øÐÐ¸³Öµ´¦Àí
+			str2[1][i] = 'a'+rand()%26;     //éšæœºç»™æ¶ˆæ¯è¿›è¡Œèµ‹å€¼å¤„ç†
 		}
 		string paddingValue0 = padding(str2[0]);
 		string result0 = iteration(paddingValue0);
@@ -354,12 +354,12 @@ int main() {//Ö÷º¯Êý
 		string result1 = iteration(paddingValue1);
 		if (comstring(result0,result1,2)==1)
 		{
-			cout << "×Ö·û´®0ÊÇ£º";
+			cout << "å­—ç¬¦ä¸²0æ˜¯ï¼š";
 			cout << str2[0];
 			cout << endl;
-			cout << "×Ö·û´®1ÊÇ£º";
+			cout << "å­—ç¬¦ä¸²1æ˜¯ï¼š";
 			cout << str2[1];
-			cout << "¹¥»÷³É¹¦" << endl;
+			cout << "æ”»å‡»æˆåŠŸ" << endl;
 
 			break;
 		}
