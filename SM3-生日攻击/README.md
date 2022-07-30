@@ -12,5 +12,5 @@
    ![results](https://user-images.githubusercontent.com/109323169/181401455-5f503870-ab30-4b19-8e49-8cacaaa9934c.png)
 ##### python版本
        代码文件为当前目录下的`attack.py`
-       运行结果（8bit）如图所示：
-   ![results](https://github.com/sduljl/project/blob/main/SM3-%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/8bit.png)
+       运行结果（10bit）如图所示：
+   ![results](https://github.com/sduljl/project/blob/main/SM3-%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/10.png)
