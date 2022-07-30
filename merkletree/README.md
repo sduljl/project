@@ -1,4 +1,4 @@
-# Merkle_tree_2
+# Merkle_tree
 
 ## 基本思想
 实现merkle tree
