@@ -116,19 +116,18 @@ def sm3(mes):
     return res_[2:]
 
 @time_test
-def attack(n=24):
+def attack(n=4):
     h=random.randint(0,pow(2,64))
     h_=[]
     for i in range(0,pow(2,32)):
-        h_.append(sm3(h)[:int(n/4)])
+        h_.append(sm3(h)[:n])
         h=2*h+1
-        if(sm3(h)[:int(n/4)] in h_):
+        t=sm3(h)[:n]
+        if(t in h_):
+            print(f"find crash: {t}")
             print("Succeed")
             return
     print("Failed")
     
 if __name__ == '__main__':
-    attack(12)
-
-
-
+    attack(5)
