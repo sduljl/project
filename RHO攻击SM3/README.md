@@ -9,3 +9,5 @@
 ## 代码运行
 ![](vx_images/5036225139195.png)
 ![](vx_images/3237725120769.png)
+`attack.py`运行结果:
+![](https://github.com/sduljl/project/blob/main/RHO%E6%94%BB%E5%87%BBSM3/5.png)
