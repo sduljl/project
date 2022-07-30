@@ -67,3 +67,5 @@ ScriptSig  和 ScriptPubKey  可以直观的用中文解释为：**解锁脚本*
 如果返回值是TRUE 的话，此时发送者也表明了其对发送 Token 的所有权和使用权。
 
 以上就是椭圆曲线数字签名（ECDSA）在以太坊中的主要应用位置和场景。
+
+##### Quoted in：https://www.thepaper.cn/newsDetail_forward_9222600
