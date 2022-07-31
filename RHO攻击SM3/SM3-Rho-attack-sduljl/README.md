@@ -23,3 +23,7 @@
 
 ###  攻击长度为28bit    
 ![W%}{W WO8 `)(WM~4W9{P 6](https://user-images.githubusercontent.com/109323169/181493270-7d19eeb9-adba-40d4-990f-b6b4014909dd.png)
+
+
+### 参考代码网址：   
+https://blog.csdn.net/qq_33439662/article/details/121635423?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165922678016780357281011%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=165922678016780357281011&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-24-121635423-null-null.142^v35^experiment_2_v1&utm_term=python%E5%AE%9E%E7%8E%B0SM3&spm=1018.2226.3001.4187
